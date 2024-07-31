@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj": {}
+    "C:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj": {}
   },
   "projects": {
-    "c:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj": {
+    "C:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "c:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj",
+        "projectPath": "C:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\App.csproj",
         "packagesPath": "C:\\Users\\tysf\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\obj\\",
+        "outputPath": "C:\\Users\\tysf\\Documents\\.net-reference\\App\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tysf\\AppData\\Roaming\\NuGet\\NuGet.Config",
