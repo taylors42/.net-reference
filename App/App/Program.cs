@@ -12,7 +12,6 @@ namespace App
             Console.Clear();
             StartAppMessage("Welcome to the band manager!");
 
-            // Instance of the Music class
             Music myBand = new Music();
             myBand.Name = "Metallica";
             Console.WriteLine(myBand.Name);
