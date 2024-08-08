@@ -6,6 +6,7 @@ namespace App.Entities
         public string? Artist { get; set; }
         private bool Available { get; set; }
         public int? Duration { get; set; }
+        public string? Slogan => "Thats a proprity! and is only get, you can't change it!";
 
         public void ShowDetails()
         {
@@ -23,5 +24,9 @@ namespace App.Entities
         {
             return Available;
         }
-    }   
+    }
+    class CodeMath
+    {
+        public int Add(int a, int b) => a + b; // Thats a example of a lambda function
+    }  
 }
