@@ -2,7 +2,9 @@
 using System.Diagnostics;
 using System.Reflection.Metadata;
 using static App.MyMethods.Utilitaries;
-using App.Entities;
+using Entities;
+using App.Models;
+
 namespace App
 {
     class Program
@@ -27,10 +29,9 @@ namespace App
             // Metallica.ShowMusics();
             // Console.WriteLine(Battery.Slogan);
 
-            Band BlueOysterCult = new Band();
-            BlueOysterCult.Name = "Blue Oyster Cult";
+            Band BlueOysterCult = new Band("Blue Oyster Cult");
 
-            Music TheReaper = new Music(BlueOysterCult);
+            Music TheReaper = new Music(BlueOysterCult, "");
             TheReaper.Name = "The Reaper";
             TheReaper.Duration = 200;
 

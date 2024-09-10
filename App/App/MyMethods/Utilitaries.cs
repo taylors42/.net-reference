@@ -1,13 +1,16 @@
+using System;
 namespace App.MyMethods
 {
     public class Utilitaries
     {
         public static Dictionary<string, List<int>> Bands = new Dictionary<string, List<int>>();
+
         public static void StartAppMessage(string ApresentationMessage)
         {
             Console.Clear();
             Console.WriteLine(ApresentationMessage);
         }
+
         public static void RegisterBand()
         {
             Console.Clear();
@@ -20,9 +23,9 @@ namespace App.MyMethods
             Console.Clear();
             MenuOptions();
         }
+
         public static void ShowAllBands()
         {
-
             Console.Clear();
             if (Bands.Count == 0)
             {
@@ -31,7 +34,7 @@ namespace App.MyMethods
                 Console.Clear();
                 MenuOptions();
             }
-            else 
+            else
             {
                 foreach (string Band in Bands.Keys)
                 {
@@ -47,6 +50,7 @@ namespace App.MyMethods
                 return;
             }
         }
+
         public static string ShowMenuOptions(Dictionary<string, List<int>> UserDictionary)
         {
             string[] UserDictionaryKeys = new string[UserDictionary.Count];
@@ -68,21 +72,24 @@ namespace App.MyMethods
                     }
                     Console.WriteLine(UserDictionaryKeys[i]);
                 }
+
                 ConsoleKeyInfo UserKey = Console.ReadKey();
+
                 if (UserKey.Key == ConsoleKey.DownArrow)
                 {
-                    if(DictionaryIndex < DictionaryLength -1)
+                    if (DictionaryIndex < DictionaryLength - 1)
                     {
-                        DictionaryIndex++;  
+                        DictionaryIndex++;
                     }
                     else
                     {
                         DictionaryIndex = 0;
                     }
                 }
+
                 else if (UserKey.Key == ConsoleKey.UpArrow)
                 {
-                    if(DictionaryIndex > 0)
+                    if (DictionaryIndex > 0)
                     {
                         DictionaryIndex--;
                     }
@@ -91,15 +98,17 @@ namespace App.MyMethods
                         DictionaryIndex = DictionaryLength - 1;
                     }
                 }
+
                 else if (UserKey.Key == ConsoleKey.Enter)
                 {
                     return UserDictionaryKeys[DictionaryIndex];
                 }
+
                 else
                 {
                     return "Error";
                 }
-            }  
+            }
         }
         public static void ShowAverageRating()
         {
@@ -107,6 +116,7 @@ namespace App.MyMethods
             Bands.Keys.CopyTo(BandKeys, 0);
             int BandIndex = 0;
             int BandLength = BandKeys.Length;
+
             while (true)
             {
                 Console.Clear();
@@ -125,9 +135,9 @@ namespace App.MyMethods
                 ConsoleKeyInfo UserKey = Console.ReadKey();
                 if (UserKey.Key == ConsoleKey.DownArrow)
                 {
-                    if(BandIndex < BandLength -1)
+                    if (BandIndex < BandLength - 1)
                     {
-                        BandIndex++;  
+                        BandIndex++;
                     }
                     else
                     {
@@ -136,7 +146,7 @@ namespace App.MyMethods
                 }
                 else if (UserKey.Key == ConsoleKey.UpArrow)
                 {
-                    if(BandIndex > 0)
+                    if (BandIndex > 0)
                     {
                         BandIndex--;
                     }
@@ -163,7 +173,7 @@ namespace App.MyMethods
                     MenuOptions();
                     return;
                 }
-            }   
+            }
         }
         public static void RateBand(Dictionary<string, List<int>> Bands)
         {
@@ -189,9 +199,9 @@ namespace App.MyMethods
                 ConsoleKeyInfo UserKey = Console.ReadKey();
                 if (UserKey.Key == ConsoleKey.DownArrow)
                 {
-                    if(BandIndex < BandLength -1)
+                    if (BandIndex < BandLength - 1)
                     {
-                        BandIndex++;  
+                        BandIndex++;
                     }
                     else
                     {
@@ -200,7 +210,7 @@ namespace App.MyMethods
                 }
                 else if (UserKey.Key == ConsoleKey.UpArrow)
                 {
-                    if(BandIndex > 0)
+                    if (BandIndex > 0)
                     {
                         BandIndex--;
                     }
@@ -235,7 +245,7 @@ namespace App.MyMethods
                     MenuOptions();
                     return;
                 }
-            }   
+            }
         }
         public static void ExitApp()
         {
@@ -253,7 +263,7 @@ namespace App.MyMethods
                 case 2:
                     ShowAllBands();
                     break;
-                
+
                 case 3:
                     RateBand(Bands);
                     break;
@@ -278,6 +288,14 @@ namespace App.MyMethods
             Console.WriteLine("5. Exit: ");
             Console.Write("\nChoose an option: ");
             if (!int.TryParse(Console.ReadLine(), out int UserOption))
+            {
+                Console.WriteLine("Invalid option. Please choose a number between 1 and 5.");
+                MenuOptions();
+                return;
+            }
+            else
+            {
+                if (UserOption < 1 || UserOption > 5)
                 {
                     Console.WriteLine("Invalid option. Please choose a number between 1 and 5.");
                     MenuOptions();
@@ -285,17 +303,9 @@ namespace App.MyMethods
                 }
                 else
                 {
-                    if (UserOption < 1 || UserOption > 5)
-                    {
-                        Console.WriteLine("Invalid option. Please choose a number between 1 and 5.");
-                        MenuOptions();
-                        return;
-                    }
-                    else
-                    {
-                        GetUserInput(UserOption);
-                    }
+                    GetUserInput(UserOption);
                 }
+            }
         }
     }
 }
